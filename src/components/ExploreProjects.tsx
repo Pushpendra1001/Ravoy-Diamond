@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import images from '../assets/images';
 
 interface Product {
   id: number;
@@ -8,13 +9,12 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: 1, name: 'Ring Diamond', image: '/path-to-ring-diamond.jpg', price: 999.99 },
-  { id: 2, name: 'Mitchelle Earrings', image: '/path-to-mitchelle-earrings.jpg', price: 799.99 },
-  { id: 3, name: 'Diamond Bracelet', image: '/path-to-diamond-bracelet.jpg', price: 1299.99 },
-  { id: 4, name: 'Earrings Twirls', image: '/path-to-earrings-twirls.jpg', price: 599.99 },
-  { id: 5, name: 'Pendant Classic', image: '/path-to-pendant-classic.jpg', price: 899.99 },
-  // Add more products as needed
-];
+  { id: 1, name: 'Ring Diamond', image: images.Ring2, price: 999.99 },
+  { id: 2, name: 'Mitchelle Earrings', image: images.Ring2, price: 799.99 },
+  { id: 3, name: 'Diamond Bracelet', image: images.Ring3, price: 1299.99 },
+  { id: 4, name: 'Earrings Twirls', image: images.Ring4, price: 599.99 },
+  { id: 5, name: 'Pendant Classic', image: images.Ring2, price: 899.99 },
+  ];
 
 const ExploreProducts: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);

@@ -1,9 +1,11 @@
 import React from 'react';
+import images from '../assets/images';
+import CustomButton from './Button';
 
 const lookbookItems = [
-  { name: 'Signature Earrings', image: '/path-to-earrings-image.jpg' },
-  { name: 'Signature Layered Studdies', image: '/path-to-studdies-image.jpg' },
-  { name: 'Signature Layered Necklace', image: '/path-to-necklace-image.jpg' },
+  { name: 'Signature Earrings', image: images.lb1 },
+  { name: 'Signature Layered Studdies', image: images.lb2 },
+  { name: 'Signature Layered Necklace', image: images.lb3 },
 ];
 
 const LatestLookbook: React.FC = () => {
@@ -36,10 +38,8 @@ const LatestLookbook: React.FC = () => {
           <p className="text-center mt-2">{lookbookItems[2].name}</p>
         </div>
       </div>
-      <div className="text-center mt-8">
-        <button className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors duration-300">
-          Browse All Collections
-        </button>
+      <div className="text-center mt-16">
+        <CustomButton>Browse All Collection</CustomButton>
       </div>
     </section>
   );

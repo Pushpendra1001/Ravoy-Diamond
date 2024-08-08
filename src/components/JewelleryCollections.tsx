@@ -1,10 +1,11 @@
 import React from 'react';
+import images from '../assets/images';
 
 const collections = [
-  { name: 'Earrings', image: '/path-to-earrings-image.jpg' },
-  { name: 'Necklaces', image: '/path-to-necklaces-image.jpg' },
-  { name: 'Rings', image: '/path-to-rings-image.jpg' },
-  { name: 'Bracelets', image: '/path-to-bracelets-image.jpg' },
+  { name: 'Earrings', image: images.Ring1 },
+  { name: 'Necklaces', image: images.Ring2 },
+  { name: 'Rings', image: images.Ring3 },
+  { name: 'Bracelets', image: images.Ring4 },
 ];
 
 const JewelleryCollections: React.FC = () => {

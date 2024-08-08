@@ -10,6 +10,22 @@ import Ring1 from './Images/Ring1.png';
 import Ring2 from './Images/Ring2.png';
 import Ring3 from './Images/Ring3.png';
 import Ring4 from './Images/Ring4.png';
+import ic1 from './Images/br1.png';
+import ic2 from './Images/br2.png';
+import ic3 from './Images/br3.png';
+import ic4 from './Images/br4.png';
+import ic5 from './Images/br5.png';
+import ic6 from './Images/br6.png';
+import ic7 from './Images/br7.png';
+import ic8 from './Images/br8.png';
+import lb1 from './Images/lookbook1.png';
+import lb2 from './Images/lookbook2.png';
+import lb3 from './Images/lookbook3.png';
+
+
+
+
+
 
 
 
@@ -28,6 +44,18 @@ const images = {
     Ring2,
     Ring3,
     Ring4,
+    ic1,
+    ic2,
+    ic3,
+    ic4,
+    ic5,
+    ic6,
+    ic7,
+    ic8,
+    lb1,
+    lb2,
+    lb3,
+    
 
   
 };

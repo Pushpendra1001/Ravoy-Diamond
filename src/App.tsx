@@ -4,7 +4,6 @@ import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
 import CategoryIcons from './components/CategoryIcons';
 import OfferSection from './components/OfferSection';
-import Ring from '../src/assets/Ring.png';
 import ShopByCategory from './components/ShopByCategory';
 import ExploreProducts from './components/ExploreProjects';
 import IconSection from './components/IconSection';
@@ -14,15 +13,17 @@ import ClientTestimonials from './components/ClientTestimonials';
 import NewsletterSubscription from './components/NewsletterSubscription';
 import ClassicJewelryCollection from './components/ClassicJewelryCollection';
 import images from './assets/images';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
-    <div className="App font-Poiret One">
+    <div className="App font-Montaga One">
       <Header />
       <Navigation />
       <HeroSection />
       <CategoryIcons />
       <OfferSection
+      category='Interesting offer'
         title="Adorn Yourself with the Finest Diamond Jewelry"
         description="Indulge in timeless beauty with our jewelry collection"
         buttonText="Shop Now"
@@ -30,6 +31,7 @@ const App: React.FC = () => {
         image2={images.Ring2}
       />
       <OfferSection
+        category="You should know"
         title="Elements of Luxury Jewelry Demo"
         description="Explore our exquisite collection of luxury jewelry pieces"
         buttonText="Discover More"
@@ -45,6 +47,7 @@ const App: React.FC = () => {
       <ClientTestimonials />
       <ClassicJewelryCollection />
       <NewsletterSubscription />
+      <Footer />
 
     </div>
   );

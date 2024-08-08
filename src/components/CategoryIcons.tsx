@@ -3,13 +3,13 @@ import images from '../assets/images';
 
 const categories = [
   { name: 'Ruby', icon: images.icon1 },
-  { name: 'Shop Now', icon: '🛍️' },
-  { name: 'Emerald', icon: '💚' },
-  { name: 'Sapphire', icon: '💙' },
-  { name: 'Diamond', icon: '💍' },
-  { name: 'Tourmaline', icon: '🔮' },
-  { name: 'Opal', icon: '🌈' },
-  { name: 'Aquamarine', icon: '💧' },
+  { name: 'Shop Now', icon: images.icon2 },
+  { name: 'Emerald', icon: images.icon3 },
+  { name: 'Sapphire', icon: images.icon4 },
+  { name: 'Diamond', icon: images.icon5 },
+  { name: 'Tourmaline', icon: images.icon6 },
+  { name: 'Opal', icon: images.icon7 },
+  { name: 'Aquamarine', icon: images.icon7 },
 ];
 
 const CategoryIcons: React.FC = () => {
@@ -17,7 +17,7 @@ const CategoryIcons: React.FC = () => {
     <div className="container mx-auto px-4 py-12">
       <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
         {categories.map((category) => (
-          <div key={category.name} className="text-center">
+          <div key={category.name} className="text-center flex flex-col justify-center items-center">
             <img src={category.icon} alt="" />
             <div className="text-sm">{category.name}</div>
           </div>

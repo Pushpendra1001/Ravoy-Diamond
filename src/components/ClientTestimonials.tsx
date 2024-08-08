@@ -23,7 +23,8 @@ const ClientTestimonials: React.FC = () => {
   return (
     <section className="bg-gray-100 py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Our Happy Clients</h2>
+      <h2 className="text-lg text-[#2993B5] font-bold text-center uppercase mb-8">Client Testimonials</h2>
+        <h2 className="text-3xl font-normal text-center mb-8">Our Happy Clients</h2>
         <div className="flex items-center">
           <button onClick={prevTestimonial} className="text-4xl text-gray-400 hover:text-gray-600">
             &#8249;

@@ -1,11 +1,15 @@
 import React from 'react';
+import images from '../assets/images';
 
 const icons = [
-  { name: 'Icon1', svg: '...' }, // Replace with actual SVG paths
-  { name: 'Icon2', svg: '...' },
-  { name: 'Icon3', svg: '...' },
-  { name: 'Icon4', svg: '...' },
-  { name: 'Icon5', svg: '...' },
+  { name: 'Icon1', svg: images.ic1 }, 
+  { name: 'Icon2', svg: images.ic2 },
+  { name: 'Icon3', svg: images.ic3 },
+  { name: 'Icon4', svg: images.ic4 },
+  { name: 'Icon5', svg: images.ic5 },
+  { name: 'Icon3', svg: images.ic6 },
+  { name: 'Icon4', svg: images.ic7 },
+  { name: 'Icon5', svg: images.ic8 },
 ];
 
 const IconSection: React.FC = () => {
@@ -14,13 +18,8 @@ const IconSection: React.FC = () => {
       <div className="flex justify-center space-x-8">
         {icons.map((icon, index) => (
           <div key={index} className="text-center">
-            <svg
-              className="w-8 h-8 mx-auto text-gray-400 hover:text-black transition-colors duration-300"
-              viewBox="0 0 24 24"
-              dangerouslySetInnerHTML={{ __html: icon.svg }}
-            />
-            <span className="text-xs mt-2">{icon.name}</span>
-          </div>
+            <img src={icon.svg} alt={icon.name} className=" flex justify-center items-center object-cover" />
+                     </div>
         ))}
       </div>
     </div>
