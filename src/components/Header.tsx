@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import images from '../assets/images';
 
 const Header: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -8,8 +9,8 @@ const Header: React.FC = () => {
     <header className="bg-white shadow-md p-5">
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center">
-          <img src="/path-to-logo.png" alt="Ravoy Logo" className="h-8 w-auto mr-2" />
-          <span className="text-xl font-bold">Ravoy Diamond</span>
+          <img src={images.Logo} alt="Ravoy Logo" className="h-8 w-auto mr-2" />
+          <span className="text-2xl  font-Montaga">Ravoy <br /> Diamond</span>
         </div>
         <div className="flex-1 max-w-xl mx-4">
           <input

@@ -21,7 +21,7 @@ import ic8 from './Images/br8.png';
 import lb1 from './Images/lookbook1.png';
 import lb2 from './Images/lookbook2.png';
 import lb3 from './Images/lookbook3.png';
-
+import Logo from './Images/Logo.png';
 
 
 
@@ -55,7 +55,8 @@ const images = {
     lb1,
     lb2,
     lb3,
-    
+    Logo
+
 
   
 };
