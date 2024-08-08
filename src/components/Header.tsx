@@ -5,11 +5,11 @@ const Header: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-md p-5">
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center">
           <img src="/path-to-logo.png" alt="Ravoy Logo" className="h-8 w-auto mr-2" />
-          <span className="text-xl font-bold">Ravoy</span>
+          <span className="text-xl font-bold">Ravoy Diamond</span>
         </div>
         <div className="flex-1 max-w-xl mx-4">
           <input

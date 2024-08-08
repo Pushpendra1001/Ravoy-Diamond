@@ -13,7 +13,7 @@ const Navigation: React.FC = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   return (
-    <nav className="bg-gray-100">
+    <nav className="bg-[#FFF9F3]">
       <div className="container mx-auto px-4">
         <ul className="flex justify-center space-x-6">
           {navigationItems.map((item) => (

@@ -1,7 +1,8 @@
 import React from 'react';
+import images from '../assets/images';
 
 const categories = [
-  { name: 'Ruby', icon: '💎' },
+  { name: 'Ruby', icon: images.icon1 },
   { name: 'Shop Now', icon: '🛍️' },
   { name: 'Emerald', icon: '💚' },
   { name: 'Sapphire', icon: '💙' },
@@ -17,7 +18,7 @@ const CategoryIcons: React.FC = () => {
       <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
         {categories.map((category) => (
           <div key={category.name} className="text-center">
-            <div className="text-4xl mb-2">{category.icon}</div>
+            <img src={category.icon} alt="" />
             <div className="text-sm">{category.name}</div>
           </div>
         ))}
