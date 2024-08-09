@@ -21,7 +21,7 @@ const OfferSection: React.FC<OfferProps> = ({
   image2,
   reversed = false,
 }) => {
-  // Animation variants for the content and images
+  
   const contentVariants = {
     hidden: { opacity: 0, x: reversed ? 100 : -100 },
     visible: {
@@ -42,16 +42,16 @@ const OfferSection: React.FC<OfferProps> = ({
 
   return (
     <section
-      className={`container mx-auto px-4 py-12 flex flex-col md:flex-row ${
+      className={`container overflow-hidden mx-auto px-4 py-12 flex flex-col md:flex-row ${
         reversed ? 'md:flex-row-reverse' : ''
       }`}
     >
-      {/* Content Section */}
+      
       <motion.div
         className="md:w-1/2 flex items-center flex-col justify-center mb-8 md:mb-0"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}  // Trigger when 50% of the element is in view
+        viewport={{ once: true, amount: 0.5 }}  
         variants={contentVariants}
       >
         <h2 className="text-lg text-[#2993B5] font-normal uppercase mb-4">
@@ -64,12 +64,12 @@ const OfferSection: React.FC<OfferProps> = ({
         <CustomButton>{buttonText}</CustomButton>
       </motion.div>
 
-      {/* Image Section */}
+      
       <motion.div
         className="md:w-1/2 grid grid-cols-2 gap-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}  // Trigger when 50% of the element is in view
+        viewport={{ once: true, amount: 0.5 }}  
         variants={imageVariants}
       >
         <img

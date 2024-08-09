@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Navigation from './Navigation'; // Assuming Navigation is in the same directory
+import Navigation from './Navigation'; 
 import images from '../assets/images';
 
 const Header: React.FC = () => {
@@ -42,21 +42,21 @@ const Header: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Middle: Search */}
-        <motion.div
-          className="flex-1 max-w-xl mx-4"
-          initial="hidden"
-          animate="visible"
-          variants={headerVariants}
-        >
-          <input
-            type="text"
-            placeholder="Search..."
-            className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </motion.div>
+
+     <motion.div
+  className="hidden md:block md:flex-1 md:max-w-xl md:mx-4"
+  initial="hidden"
+  animate="visible"
+  variants={headerVariants}
+>
+  <input
+    type="text"
+    placeholder="Search..."
+    className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+</motion.div>
 
         {/* Right: Icons */}
         <motion.div
@@ -81,6 +81,7 @@ const Header: React.FC = () => {
               />
             </svg>
           </button>
+          <h3 className="hidden md:block text-[#9C9C9C] uppercase tracking-widest">Login/Register</h3>
           <button className="text-gray-600 hover:text-gray-800">
             <svg
               xmlns="http://www.w3.org/2000/svg"
