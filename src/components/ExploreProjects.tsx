@@ -14,7 +14,9 @@ const products: Product[] = [
   { id: 3, name: 'Diamond Bracelet', image: images.Ring3, price: 1299.99 },
   { id: 4, name: 'Earrings Twirls', image: images.Ring4, price: 599.99 },
   { id: 5, name: 'Pendant Classic', image: images.Ring2, price: 899.99 },
-  ];
+  { id: 5, name: 'Pendant Classic', image: images.Ring2, price: 899.99 },
+  { id: 5, name: 'Pendant Classic', image: images.Ring2, price: 899.99 },
+];
 
 const ExploreProducts: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import images from '../assets/images';
 
 const icons = [
@@ -7,22 +8,24 @@ const icons = [
   { name: 'Icon3', svg: images.ic3 },
   { name: 'Icon4', svg: images.ic4 },
   { name: 'Icon5', svg: images.ic5 },
-  { name: 'Icon3', svg: images.ic6 },
-  { name: 'Icon4', svg: images.ic7 },
-  { name: 'Icon5', svg: images.ic8 },
+  { name: 'Icon6', svg: images.ic6 },
+  { name: 'Icon7', svg: images.ic7 },
+  { name: 'Icon8', svg: images.ic8 },
 ];
 
 const IconSection: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-center space-x-8">
-        {icons.map((icon, index) => (
-          <div key={index} className="text-center">
-            <img src={icon.svg} alt={icon.name} className=" flex justify-center items-center object-cover" />
-                     </div>
-        ))}
-      </div>
-    </div>
+    <motion.div
+      style={{ display: 'flex', overflow: 'hidden', whiteSpace: 'nowrap' }}
+      animate={{ x: ['100%', '-100%'] }}
+      transition={{ duration: 10, ease: 'linear', repeat: Infinity }}
+    >
+      {icons.map((icon, index) => (
+        <div key={index} style={{ display: 'inline-block', margin: '0 10px' }}>
+          <img src={icon.svg} alt={icon.name} />
+        </div>
+      ))}
+    </motion.div>
   );
 };
 

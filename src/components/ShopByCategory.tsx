@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import images from '../assets/images';
 
 interface Category {
@@ -9,7 +11,7 @@ interface Category {
 const categories: Category[] = [
   { name: 'Rings', image: images.Ring1 },
   { name: 'Earrings Set', image: images.Ring2 },
-  { name: 'Necklaces', image:  images.Ring2 },
+  { name: 'Necklaces', image: images.Ring2 },
   { name: 'Chains', image: images.Ring2 },
   { name: 'Nose Pin', image: images.Ring2 },
   { name: 'Earrings', image: images.Ring2 },
@@ -22,16 +24,39 @@ const categories: Category[] = [
 ];
 
 const ShopByCategory: React.FC = () => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: true, 
+    threshold: 0.5, 
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
   return (
     <section className="container mx-auto px-4 py-12">
-      <h2 className="text-1xl font-md text-center uppercase text-[#2993B5]">The Most Populor</h2>
+      <h2 className="text-1xl font-md text-center uppercase text-[#2993B5]">The Most Popular</h2>
       <h2 className="text-2xl font-lg text-center uppercase mb-8">Shop By Category</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {categories.map((category, index) => (
-          <div key={index} className="text-center">
+          <motion.div
+            key={index}
+            ref={ref}
+            className="text-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={controls}
+            variants={{
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: 50 },
+            }}
+            transition={{ delay: index * 0.1, type: 'spring', stiffness: 50 }}
+          >
             <img src={category.image} alt={category.name} className="w-full h-40 object-cover rounded-lg mb-2" />
-            <p className="text-sm font-medium uppercase font-Montaga" >{category.name}</p>
-          </div>
+            <p className="text-sm font-medium uppercase font-Montaga">{category.name}</p>
+          </motion.div>
         ))}
       </div>
     </section>

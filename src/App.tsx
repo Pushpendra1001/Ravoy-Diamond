@@ -14,12 +14,16 @@ import NewsletterSubscription from './components/NewsletterSubscription';
 import ClassicJewelryCollection from './components/ClassicJewelryCollection';
 import images from './assets/images';
 import Footer from './components/Footer';
+import JewelrySection from './components/ClassicJewelryCollection';
+import Banner from './components/banner';
 
 const App: React.FC = () => {
   return (
     <div className="App font-Montaga One">
       <Header />
-      <Navigation />
+            <div className="hidden md:block">
+        <Navigation />
+      </div>
       <HeroSection />
       <CategoryIcons />
       <OfferSection
@@ -41,11 +45,12 @@ const App: React.FC = () => {
       />
       <ShopByCategory />
       <ExploreProducts />
+      <Banner/>
       <IconSection />
       <JewelleryCollections />
       <LatestLookbook />
       <ClientTestimonials />
-      <ClassicJewelryCollection />
+      <JewelrySection />
       <NewsletterSubscription />
       <Footer />
 

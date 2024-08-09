@@ -22,6 +22,11 @@ import lb1 from './Images/lookbook1.png';
 import lb2 from './Images/lookbook2.png';
 import lb3 from './Images/lookbook3.png';
 import Logo from './Images/Logo.png';
+import left_jew from './Images/left_jewelry.png'
+import Mid_jew from './Images/middle_jewelry.png'
+import right_jew from './Images/right_jewelry.png'
+import Banner  from './Images/banner.png';
+import bannerRing from './Images/bannerring.png'
 
 
 
@@ -55,10 +60,13 @@ const images = {
     lb1,
     lb2,
     lb3,
-    Logo
+    Logo,
+    left_jew,
+    Mid_jew,
+    right_jew,
+    Banner,
+    bannerRing
 
-
-  
 };
 
 export default images;

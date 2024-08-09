@@ -1,11 +1,13 @@
 import React from 'react';
+import images from '../assets/images';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-100 py-12">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <img src="/path-to-logo.png" alt="Ravoy Diamond" className="w-32 mb-4" />
+          <img src={images.Logo} alt="Ravoy Diamond" className="w-14 mb-4" />
+          <h1 className="font-medium font-Montaga">Ravoy Diamond</h1>
           <p className="text-sm">Let The Shining Fingers On The Talking, Antique Diamond Ring Fit All Occasions</p>
         </div>
         <div>
