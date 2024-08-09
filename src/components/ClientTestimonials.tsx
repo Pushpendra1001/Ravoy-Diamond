@@ -3,8 +3,18 @@ import React, { useState } from 'react';
 const testimonials = [
   {
     id: 1,
-    text: "We Can't Withstand Capacity's Amasing Overall Offers For Our Kitchen Design And Remodel Services. Wellborn Has The Best Quality I Have Seen, With Fair Pricing And Excellent, Excellent Customer Service. They Are My 'Go To' Line.",
+    text: "We Can't Withstand  I Have Seen, With Fair Pricing And Excellent, Excellent Customer Service. They Are My 'Go To' Line.",
     author: "MARYANN SIMMS"
+  },
+  {
+    id: 2,
+    text: "We Our Kitchen Design And Remodel Services. Wellborn Has The Best Quality I Have Seen, With Fair Pricing And Excellent, Excellent Customer Service. They Are My 'Go To' Line.",
+    author: " SIMMS"
+  },
+  {
+    id: 3,
+    text: "We Can't Withstand Capacity's Amasing Overall Offers For Our Kitchen Design And Remodel Services. Wellborn Has The Best Quality I Have Seen, With Fair Pricing And Excellent, Excellent Customer Service. They Are My 'Go To' Line.",
+    author: "MARYANN "
   },
   // Add more testimonials here
 ];

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import images from '../assets/images';
 
 const collections = [
@@ -11,19 +12,35 @@ const collections = [
 const JewelleryCollections: React.FC = () => {
   return (
     <section className="container mx-auto px-4 py-12">
-      <h2 className="text-3xl font-bold text-center mb-8">Jewellery Collections</h2>
+      <h2 className="text-1xl font-semibold text-[#2993B5] tracking-widest text-center mb-2 uppercase">Get Ready to sparkle</h2>
+      
+      
+      <h2 className="text-3xl font-normal tracking-wider text-center mb-8">Jewellery Collections</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {collections.map((collection, index) => (
-          <div key={index} className="relative group overflow-hidden">
-            <img
+          <motion.div
+            key={index}
+            className="relative overflow-hidden"
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.img
               src={collection.image}
               alt={collection.name}
-              className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              className="w-full h-64 object-cover"
+              initial={{ opacity: 1 }}
+              whileHover={{ opacity: 0.8 }}
+              transition={{ duration: 0.3 }}
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <motion.div
+              className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            >
               <span className="text-white text-xl font-semibold">{collection.name}</span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
     </section>
