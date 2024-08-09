@@ -33,7 +33,7 @@ const LatestLookbook: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Call it initially in case it's already in view
+    handleScroll(); 
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [controls]);

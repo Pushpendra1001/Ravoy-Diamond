@@ -27,46 +27,62 @@ import Mid_jew from './Images/middle_jewelry.png'
 import right_jew from './Images/right_jewelry.png'
 import Banner  from './Images/banner.png';
 import bannerRing from './Images/bannerring.png'
+import ct1 from './Images/ct1.png'
+import ct2 from './Images/ct2.png';
+import ct3 from './Images/ct3.png';
+import ct4 from './Images/ct4.png';
+import ct5 from './Images/ct5.png';
+import ct6 from './Images/ct6.png';
+import ct7 from './Images/ct7.png';
+import ct8 from './Images/ct8.png';
+import ct9 from './Images/ct9.png';
+import ct10 from './Images/ct10.png';
+import ct11 from './Images/ct11.png';
 
 
-
-
-
-
-
-
+// ...
 
 const images = {
   MainHome,
-    icon1,
-    icon2,
-    icon3,
-    icon4,
-    icon5,
-    icon6,
-    icon7,
-    Ring1,
-    Ring2,
-    Ring3,
-    Ring4,
-    ic1,
-    ic2,
-    ic3,
-    ic4,
-    ic5,
-    ic6,
-    ic7,
-    ic8,
-    lb1,
-    lb2,
-    lb3,
-    Logo,
-    left_jew,
-    Mid_jew,
-    right_jew,
-    Banner,
-    bannerRing
-
+  icon1,
+  icon2,
+  icon3,
+  icon4,
+  icon5,
+  icon6,
+  icon7,
+  Ring1,
+  Ring2,
+  Ring3,
+  Ring4,
+  ic1,
+  ic2,
+  ic3,
+  ic4,
+  ic5,
+  ic6,
+  ic7,
+  ic8,
+  lb1,
+  lb2,
+  lb3,
+  Logo,
+  left_jew,
+  Mid_jew,
+  right_jew,
+  Banner,
+  bannerRing,
+  ct1,
+  ct2,
+  ct3,
+  ct4,
+  ct5,
+  ct6,
+  ct7,
+  ct8,
+  ct9,
+  ct10,
+  ct11
 };
 
 export default images;

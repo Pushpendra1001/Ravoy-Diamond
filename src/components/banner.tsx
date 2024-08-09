@@ -1,4 +1,4 @@
-import React from 'react';
+
 import images from '../assets/images';
 
 const Banner = () => {

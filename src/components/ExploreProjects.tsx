@@ -6,16 +6,18 @@ interface Product {
   name: string;
   image: string;
   price: number;
+  description: string;
+  details: string;
 }
 
 const products: Product[] = [
-  { id: 1, name: 'Ring Diamond', image: images.Ring2, price: 999.99 },
-  { id: 2, name: 'Mitchelle Earrings', image: images.Ring2, price: 799.99 },
-  { id: 3, name: 'Diamond Bracelet', image: images.Ring3, price: 1299.99 },
-  { id: 4, name: 'Earrings Twirls', image: images.Ring4, price: 599.99 },
-  { id: 5, name: 'Pendant Classic', image: images.Ring2, price: 899.99 },
-  { id: 5, name: 'Pendant Classic', image: images.Ring2, price: 899.99 },
-  { id: 5, name: 'Pendant Classic', image: images.Ring2, price: 899.99 },
+  { id: 1, name: 'Ring Diamond', image: images.Ring2, price: 999.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 2, name: 'Mitchelle Earrings', image: images.Ring2, price: 799.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 3, name: 'Diamond Bracelet', image: images.Ring3, price: 1299.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 4, name: 'Earrings Twirls', image: images.Ring4, price: 599.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 5, name: 'Pendant Classic', image: images.Ring2, price: 899.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 6, name: 'Pendant Classic', image: images.Ring2, price: 899.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 7, name: 'Pendant Classic', image: images.Ring2, price: 899.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
 ];
 
 const ExploreProducts: React.FC = () => {
@@ -74,10 +76,12 @@ const ExploreProducts: React.FC = () => {
           onScroll={handleScroll}
         >
           {products.map((product) => (
-            <div key={product.id} className="flex-shrink-0 w-64">
+            <div key={product.id} className="flex-shrink-0 text-center w-64">
               <img src={product.image} alt={product.name} className="w-full h-64 object-cover rounded-lg mb-2" />
               <h3 className="text-lg font-semibold">{product.name}</h3>
-              <p className="text-gray-600">${product.price.toFixed(2)}</p>
+              <p className="text-blue-400">${product.price.toFixed(2)}</p>
+              <p className="text-gray-500">Description & Details</p>
+              <p className="text-gray-400">{product.details}</p>
             </div>
           ))}
         </div>

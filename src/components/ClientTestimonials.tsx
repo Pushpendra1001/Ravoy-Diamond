@@ -16,7 +16,7 @@ const testimonials = [
     text: "We Can't Withstand Capacity's Amasing Overall Offers For Our Kitchen Design And Remodel Services. Wellborn Has The Best Quality I Have Seen, With Fair Pricing And Excellent, Excellent Customer Service. They Are My 'Go To' Line.",
     author: "MARYANN "
   },
-  // Add more testimonials here
+  
 ];
 
 const ClientTestimonials: React.FC = () => {

@@ -11,7 +11,6 @@ import JewelleryCollections from './components/JewelleryCollections';
 import LatestLookbook from './components/LatestLookbook';
 import ClientTestimonials from './components/ClientTestimonials';
 import NewsletterSubscription from './components/NewsletterSubscription';
-import ClassicJewelryCollection from './components/ClassicJewelryCollection';
 import images from './assets/images';
 import Footer from './components/Footer';
 import JewelrySection from './components/ClassicJewelryCollection';

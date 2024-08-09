@@ -9,18 +9,20 @@ interface Category {
 }
 
 const categories: Category[] = [
-  { name: 'Rings', image: images.Ring1 },
-  { name: 'Earrings Set', image: images.Ring2 },
-  { name: 'Necklaces', image: images.Ring2 },
-  { name: 'Chains', image: images.Ring2 },
-  { name: 'Nose Pin', image: images.Ring2 },
-  { name: 'Earrings', image: images.Ring2 },
-  { name: 'Bangles', image: images.Ring2 },
-  { name: 'Bracelets', image: images.Ring2},
-  { name: 'Pendants', image: images.Ring2 },
-  { name: 'Studs', image: images.Ring2 },
-  { name: 'Tops', image: images.Ring2 },
-  { name: 'Rings', image: images.Ring2 },
+  { name: 'Rings', image: images.ct1 },
+  { name: 'Earrings Set', image: images.ct2 },
+  { name: 'Necklaces', image: images.ct3 },
+  { name: 'Chains', image: images.ct4 },
+  { name: 'Nose Pin', image: images.ct5 },
+  { name: 'Earrings', image: images.ct6 },
+  { name: 'Bangles', image: images.ct7 },
+  { name: 'Bracelets', image: images.ct8 },
+  { name: 'Pendants', image: images.ct9 },
+  { name: 'Studs', image: images.ct10 },
+  { name: 'Tops', image: images.ct11 },
+  { name: 'Tops', image: images.ct3 },
+
+  
 ];
 
 const ShopByCategory: React.FC = () => {
