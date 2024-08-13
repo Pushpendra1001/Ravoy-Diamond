@@ -39,7 +39,7 @@ import ct9 from './Images/ct9.png';
 import ct10 from './Images/ct10.png';
 import ct11 from './Images/ct11.png';
 import neckless from './Images/neckless.png';
-
+import Ring5 from './Images/Ring5.png';
 
 
 
@@ -56,6 +56,7 @@ const images = {
   Ring2,
   Ring3,
   Ring4,
+  Ring5,
   ic1,
   ic2,
   ic3,

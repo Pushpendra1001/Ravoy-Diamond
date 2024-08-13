@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import images from '../assets/images';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -100,6 +101,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
                   onSubmit={handleSubmit}
                 >
                   <h2 className="text-2xl font-semibold text-[#3093CB] text-center uppercase mb-4">Login or Signup</h2>
+                  <img className='rounded-md w-full mb-10' src={images.Ring5} alt="" />
                   <div className="mb-4">
                     <input
                       type="text"
