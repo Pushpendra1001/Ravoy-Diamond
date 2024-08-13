@@ -38,9 +38,10 @@ import ct8 from './Images/ct8.png';
 import ct9 from './Images/ct9.png';
 import ct10 from './Images/ct10.png';
 import ct11 from './Images/ct11.png';
+import neckless from './Images/neckless.png';
 
 
-// ...
+
 
 const images = {
   MainHome,
@@ -82,7 +83,9 @@ const images = {
   ct8,
   ct9,
   ct10,
-  ct11
+  ct11,
+  neckless
 };
+
 
 export default images;
