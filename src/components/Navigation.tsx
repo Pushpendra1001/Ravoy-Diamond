@@ -6,7 +6,7 @@ const navigationItems = [
   { name: 'HOME', href: '#' },
   { name: 'ALL JEWELRY', href: '#', hasDropdown: true },
   { name: 'SHOPS', href: '#' },
-  { name: 'GIFTS & OFFERS', href: '#', hasDropdown: true },
+  { name: 'GIFTS & OFFERS',  href: '/gifts-and-offers', hasDropdown: true },
   { name: 'ABOUT US', href: '#' },
   { name: 'CONTACT US', href: '#' },
 ];
