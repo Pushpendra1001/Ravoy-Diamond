@@ -1,68 +1,148 @@
-// src/components/ProductDetail.tsx
 import React, { useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import images from '../assets/images';
+import ExploreProducts from '../components/ExploreProjects';
+import JewelleryCollections from '../components/JewelleryCollections';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
-
-interface ProductDetailProps {
-  product: {
-    id: string;
-    name: string;
-    price: number;
-    originalPrice: number;
-    images: string[];
-    description: string;
-    size: {
-      height: number;
-      width: number;
-      length: number;
-    };
-    weight: {
-      net: number;
-      diamond: number;
-      gold: number;
-    };
-    purity: string;
-    basicInfo: {
-      productType: string;
-      brand: string;
-      itemPackageQuantity: number;
-      gender: string;
-    };
-    diamondInfo: {
-      color: string;
-      clarity: string;
-      caratWeight: number;
-      pieces: number;
-    };
-    metalInfo: {
-      purity: string;
-      metal: string;
-      netWeight: number;
-    };
-    certification: {
-      diamondCertification: string;
-      hallmarkLicense: string;
-    };
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  originalPrice: number;
+  images: string[];
+  description: string;
+  size: {
+    height: number;
+    width: number;
+    length: number;
   };
+  weight: {
+    net: number;
+    diamond: number;
+    gold: number;
+  };
+  purity: string;
+  basicInfo: {
+    productType: string;
+    brand: string;
+    itemPackageQuantity: number;
+    gender: string;
+  };
+  diamondInfo: {
+    color: string;
+    clarity: string;
+    caratWeight: number;
+    pieces: number;
+  };
+  metalInfo: {
+    purity: string;
+    metal: string;
+    netWeight: number;
+  };
+  certification: {
+    diamondCertification: string;
+    hallmarkLicense: string;
+  };
+  priceBreakup: {
+    component: string;
+    name: string;
+    rate: string;
+    weight: string;
+    discount: string;
+    finalValue: string;
+  }[];
+  tags: string[];
 }
 
-const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
-  
+const products: Product[] = [
+  {
+    id: 1,
+    name: 'CAPTIVATING FLORAL DESIGN DIAMOND BRACELET',
+    price: 102311,
+    originalPrice: 222311,
+    images: [images.ring1_1, images.ring1_2, images.ring1_3, images.ring1_4 , images.ring1_5],
+    description: 'Wear Your Heart On Your Sleeve With This Pair Of Stud Earrings Crafted In 18 Karat Yellow Gold With A Glossy Finish. Stone Clarity I/12',
+    size: { height: 30, width: 40, length: 100 },
+    weight: { net: 20.00, diamond: 2.50, gold: 10.00 },
+    purity: '18 Karat',
+    basicInfo: {
+      productType: 'Ring',
+      brand: 'Mine',
+      itemPackageQuantity: 1,
+      gender: 'Men',
+    },
+    diamondInfo: {
+      color: 'GH',
+      clarity: 'VVS/VS',
+      caratWeight: 0.06,
+      pieces: 3,
+    },
+    metalInfo: {
+      purity: 'K 18I',
+      metal: 'Gold',
+      netWeight: 9.288,
+    },
+    certification: {
+      diamondCertification: 'IGI',
+      hallmarkLicense: 'NolNAC-7790174625',
+    },
+    priceBreakup: [
+      { component: 'Metal', name: '18KT Plain Gold', rate: 'Rs 5260.91/G', weight: '0.613g', discount: '-', finalValue: 'Rs 3225.99' },
+      { component: 'Stone', name: 'Diamond', rate: '-', weight: '1.824 Ct/', discount: '-', finalValue: 'Rs 10552' },
+      { component: 'Gemstone 1', name: 'Ruby', rate: '-', weight: '0.325 G', discount: '-', finalValue: 'Rs 10552' },
+      { component: 'Gemstone 2', name: 'Saphire', rate: '-', weight: '1.824 Ct/ 0.325 G', discount: '-', finalValue: 'Rs 10552' },
+    ],
+    tags: ['WOMEN BRACELETS', 'OFFERS BRACELETS', 'SPECIAL OCCASION BRACELETS', 'DIAMOND BRACELETS', 'CLASSIC BRACELETS', 'WEDDING BRACELETS', 'FASHION BRACELETS', 'GOLD BRACELETS', 'CLASSIC BRACELETS'],
+  },
+  // Add more products as needed
+];
+
+const ProductDetail: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  const product = products.find(p => p.id === Number(id));
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === product.images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? product.images.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
     <div className="container mx-auto px-4 py-8">
+      
       <div className="flex flex-col md:flex-row">
-        {/* Left: Product Images */}
-        <div className="md:w-1/2 mb-8 md:mb-0">
-         
-          
-       
+        <div className="md:w-1/2 relative">
+          <img  src={product.images[currentImageIndex]} alt={product.name} className="w-full h-3/4 rounded-lg" />
+          <button onClick={prevImage} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
+            &lt;
+          </button>
+          <button onClick={nextImage} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
+            &gt;
+          </button>
+          <div className="flex justify-center mt-4">
+            {product.images.map((image, index) => (
+              <img 
+                key={index} 
+                src={image} 
+                alt={`Thumbnail ${index + 1}`} 
+                className={`w-16 h-16 object-cover rounded-md mx-2 cursor-pointer ${index === currentImageIndex ? 'border-2 border-blue-500' : ''}`}
+                onClick={() => setCurrentImageIndex(index)}
+              />
+            ))}
+          </div>
         </div>
-
-        {/* Right: Product Info */}
-        <div className="md:w-1/2 md:pl-8">
+        <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0">
           <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
           <div className="flex items-center mb-4">
             <span className="text-yellow-400 mr-2">★★★★☆</span>
@@ -70,11 +150,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
           </div>
           <p className="mb-4">{product.description}</p>
           <div className="mb-4">
-            <span className="text-2xl font-bold text-red-600">RS. {product.price.toLocaleString()}</span>
+            <span className="text-2xl font-bold text-[#CBB090]">RS. {product.price.toLocaleString()}</span>
             <span className="text-lg text-gray-500 line-through ml-2">RS. {product.originalPrice.toLocaleString()}</span>
           </div>
           <div className="mb-4">
-            <span className="font-semibold">Size:</span> {product.size.height}mm x {product.size.width}mm x {product.size.length}mm
+            <span className="font-semibold">Size:</span> Height - {product.size.height}mm  Width - {product.size.width} length -  {product.size.length}mm
           </div>
           <div className="mb-4">
             <p><span className="font-semibold">Net Weight:</span> {product.weight.net}g</p>
@@ -83,14 +163,22 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             <p><span className="font-semibold">Gold Purity:</span> {product.purity}</p>
           </div>
           <div className="flex space-x-4 mb-6">
-            <button className="bg-blue-500 text-white px-6 py-2 rounded">Add To Cart</button>
+            <button className="bg-[#6DAFCA] text-white px-6 py-2 rounded">Add To Cart</button>
             <button className="border border-blue-500 text-blue-500 px-6 py-2 rounded">Buy Now</button>
           </div>
-          <div className="flex space-x-4 text-sm text-gray-600">
+         <div className="flex gap-2">
+         <div className="flex flex-col space-y-2 text-sm text-gray-600">
             <span>✓ Purity Guaranteed</span>
             <span>✓ Free Shipping All Across India</span>
             <span>✓ International Shipment Charges Add</span>
           </div>
+
+          <div className="flex flex-col space-y-2 text-sm text-gray-600">
+            <span>✓ Purity Guaranteed</span>
+            <span>✓ Free Shipping All Across India</span>
+            <span>✓ International Shipment Charges Add</span>
+          </div>
+         </div>
         </div>
       </div>
 
@@ -143,42 +231,51 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
         </div>
       </div>
 
+      
+      <div className="mt-12">
+        <h2 className="text-2xl font-bold mb-4">Price Breakup</h2>
+        <table className="w-full border-collapse">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="border p-2">Component</th>
+              <th className="border p-2">Name</th>
+              <th className="border p-2">Rate</th>
+              <th className="border p-2">Weight</th>
+              <th className="border p-2">Discount</th>
+              <th className="border p-2">Final Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {product.priceBreakup.map((item, index) => (
+              <tr key={index}>
+                <td className="border p-2">{item.component}</td>
+                <td className="border p-2">{item.name}</td>
+                <td className="border p-2">{item.rate}</td>
+                <td className="border p-2">{item.weight}</td>
+                <td className="border p-2">{item.discount}</td>
+                <td className="border p-2">{item.finalValue}</td>
+              </tr>
+            ))}
+            <tr>
+              <td colSpan={5} className="border p-2 font-bold">Grand Total</td>
+              <td className="border p-2 font-bold">Rs {product.price.toFixed(2)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       {/* Tags */}
       <div className="mt-12">
-        <h3 className="font-semibold mb-2">Tags</h3>
+        <h2 className="text-2xl font-bold mb-4">Tags</h2>
         <div className="flex flex-wrap gap-2">
-          {['WOMEN BRACELETS', 'OFFERS BRACELETS', 'SPECIAL OCCASION BRACELETS', 'DIAMOND BRACELETS', 'CLASSIC BRACELETS', 'WEDDING BRACELETS', 'FASHION BRACELETS', 'GOLD BRACELETS'].map((tag) => (
-            <span key={tag} className="bg-gray-200 px-3 py-1 rounded-full text-sm">{tag}</span>
+          {product.tags.map((tag, index) => (
+            <span key={index} className="bg-gray-200 px-3 py-1 rounded-full text-sm">{tag}</span>
           ))}
         </div>
       </div>
 
-      {/* Customer Reviews */}
-      <div className="mt-12" id="reviews">
-        <h2 className="text-2xl font-bold mb-4">CUSTOMER REVIEWS</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { name: 'SANA TUMBAJ', date: 'June 22', rating: 5 },
-            { name: 'JATIN KUMAR', date: 'September 15', rating: 5 },
-            { name: 'KANHAIYA', date: 'May 02', rating: 5 },
-          ].map((review, index) => (
-            <div key={index} className="border p-4 rounded">
-              <div className="flex items-center mb-2">
-                <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                <div>
-                  <h4 className="font-semibold">{review.name}</h4>
-                  <p className="text-sm text-gray-500">{review.date}</p>
-                </div>
-              </div>
-              <div className="flex text-yellow-400 mb-2">
-                {'★'.repeat(review.rating)}
-                {'☆'.repeat(5 - review.rating)}
-              </div>
-              <p className="text-sm">Give Your Everyday Style A Flourish Of Sparkling Romance With These Heart Shaped Earrings. This Pair Also Makes For A Great Gift For A Loved One!</p>
-            </div>
-          ))}
-        </div>
-      </div>
+    <ExploreProducts />
+    <JewelleryCollections />
     </div>
   );
 };

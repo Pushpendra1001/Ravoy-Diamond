@@ -7,6 +7,8 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import GiftOffers from './screens/giftsOfferPage';
 import ProductDetail from './screens/productDetail';
+import images from './assets/images';
+import ShoppingCart from './screens/ShoppingCart';
 
 
 const App: React.FC = () => {
@@ -19,8 +21,8 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/gifts-and-offers" element={<GiftOffers />} />
-              
-
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<ShoppingCart/>} />
       </Routes>
     <Footer />
 

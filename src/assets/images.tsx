@@ -41,6 +41,11 @@ import ct11 from './Images/ct11.png';
 import neckless from './Images/neckless.png';
 import Ring5 from './Images/Ring5.png';
 import GiftBanner from './Images/giftbanner.png';
+import ring1_1 from './Images/ring1-1.png';
+import ring1_2 from './Images/ring1-2.png';
+import ring1_3 from './Images/ring1-3.png';
+import ring1_4 from './Images/ring1-4.png';
+import ring1_5 from './Images/ring1-5.png';
 
 
 
@@ -87,7 +92,12 @@ const images = {
   ct10,
   ct11,
   neckless,
-  GiftBanner
+  GiftBanner,
+  ring1_1,
+  ring1_2,
+  ring1_3,
+  ring1_4,
+  ring1_5
 };
 
 

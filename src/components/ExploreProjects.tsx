@@ -48,7 +48,6 @@ const ExploreProducts: React.FC = () => {
 
   return (
     <section className="container mx-auto px-4 py-12 relative">
-      <h2 className="text-3xl font-bold text-center mb-8">Explore Our Products</h2>
       <div className="relative">
         {showLeftArrow && (
           <button

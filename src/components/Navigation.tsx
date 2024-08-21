@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import images from '../assets/images';
 
 const navigationItems = [
-  { name: 'HOME', href: '#' },
+  { name: 'HOME', href: '/' },
   { name: 'ALL JEWELRY', href: '#', hasDropdown: true },
   { name: 'SHOPS', href: '#' },
   { name: 'GIFTS & OFFERS',  href: '/gifts-and-offers', hasDropdown: true },

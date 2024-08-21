@@ -12,10 +12,7 @@ const collections = [
 const JewelleryCollections: React.FC = () => {
   return (
     <section className="container mx-auto px-4 py-12">
-      <h2 className="text-1xl font-semibold text-[#2993B5] tracking-widest text-center mb-2 uppercase">Get Ready to sparkle</h2>
       
-      
-      <h2 className="text-3xl font-normal tracking-wider text-center mb-8">Jewellery Collections</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {collections.map((collection, index) => (
           <motion.div

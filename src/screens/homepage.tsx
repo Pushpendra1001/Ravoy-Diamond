@@ -40,9 +40,15 @@ const HomePage: React.FC = () => {
       reversed
     />
     <ShopByCategory />
+    <h2 className="text-3xl font-bold text-center mb-8">Explore Our Products</h2>
+
     <ExploreProducts />
     <Banner/>
     <IconSection />
+    <h2 className="text-1xl font-semibold text-[#2993B5] tracking-widest text-center mb-2 uppercase">Get Ready to sparkle</h2>
+      
+      
+      <h2 className="text-3xl font-normal tracking-wider text-center mb-8">Jewellery Collections</h2>
     <JewelleryCollections />
     <LatestLookbook />
     <ClientTestimonials />

@@ -3,6 +3,7 @@ import images from '../assets/images';
 import Banner from '../components/banner';
 import NewsletterSubscription from '../components/NewsletterSubscription';
 import JewelrySection from '../components/ClassicJewelryCollection';
+import { Link } from 'react-router-dom';
 
 
 interface Product {
@@ -117,16 +118,15 @@ const GiftOffers: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((product) => (
-              <div key={product.id} className="bg-white p-4 rounded-lg shadow text-center">
-                <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-4 rounded" />
-                <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
-                <p className="text-blue-600">₹{product.price}</p>
-                  <button className="">Description & Details</button>
-               
-              </div>
-            ))}
-          </div>
+        {products.map((product) => (
+          <Link to={`/product/${product.id}`} key={product.id} className="bg-white p-4 rounded-lg shadow text-center">
+            <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-4 rounded" />
+            <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+            <p className="text-blue-600">₹{product.price}</p>
+            <button className="mt-2 text-blue-500">Description & Details</button>
+          </Link>
+        ))}
+      </div>
         </div>
       </div>
       
