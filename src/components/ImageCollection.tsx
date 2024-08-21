@@ -1,14 +1,14 @@
-// src/components/ImageCollection.tsx
+
 import React from 'react';
 import images from '../assets/images';
 
 const image = [
   images.Ring1,
-  images.Ring2,
-  images.Ring2,
-  images.Ring2,
-  images.Ring2,
-  images.Ring2,
+  images.ring1_1,
+  images.Ring3,
+  images.Ring4,
+  images.Ring1,
+  images.Ring4,
 ];
 
 const ImageCollection: React.FC = () => {

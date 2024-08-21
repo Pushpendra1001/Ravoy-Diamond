@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import images from '../assets/images';
 import ExploreProducts from '../components/ExploreProjects';
 import JewelleryCollections from '../components/JewelleryCollections';
+import CustomerReviews from '../components/customerReview';
+import { useNavigate } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -84,20 +86,26 @@ const products: Product[] = [
     },
     certification: {
       diamondCertification: 'IGI',
-      hallmarkLicense: 'NolNAC-7790174625',
+      hallmarkLicense: 'NolNAC-77901',
     },
     priceBreakup: [
       { component: 'Metal', name: '18KT Plain Gold', rate: 'Rs 5260.91/G', weight: '0.613g', discount: '-', finalValue: 'Rs 3225.99' },
       { component: 'Stone', name: 'Diamond', rate: '-', weight: '1.824 Ct/', discount: '-', finalValue: 'Rs 10552' },
       { component: 'Gemstone 1', name: 'Ruby', rate: '-', weight: '0.325 G', discount: '-', finalValue: 'Rs 10552' },
       { component: 'Gemstone 2', name: 'Saphire', rate: '-', weight: '1.824 Ct/ 0.325 G', discount: '-', finalValue: 'Rs 10552' },
+      { component: 'Sub Total', name: '-', rate: '-', weight: '5.61 g(Gross Weight)', discount: '-', finalValue: 'Rs 2975.00' },
+      { component: 'Discount On Selling Price', name: '-', rate: '-', weight: '', discount: 'Rs 10230', finalValue: 'Rs 2975.00' },
+      { component: 'GST', name: '-', rate: '-', weight: '', discount: '', finalValue: 'Rs 2975.00' },
+
+
     ],
     tags: ['WOMEN BRACELETS', 'OFFERS BRACELETS', 'SPECIAL OCCASION BRACELETS', 'DIAMOND BRACELETS', 'CLASSIC BRACELETS', 'WEDDING BRACELETS', 'FASHION BRACELETS', 'GOLD BRACELETS', 'CLASSIC BRACELETS'],
   },
-  // Add more products as needed
+  
 ];
 
 const ProductDetail: React.FC = () => {
+  const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const product = products.find(p => p.id === Number(id));
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -116,6 +124,10 @@ const ProductDetail: React.FC = () => {
     setCurrentImageIndex((prevIndex) => 
       prevIndex === 0 ? product.images.length - 1 : prevIndex - 1
     );
+  };
+
+  const handleBuyNow = () => {
+    navigate('/cart');
   };
 
   return (
@@ -164,7 +176,7 @@ const ProductDetail: React.FC = () => {
           </div>
           <div className="flex space-x-4 mb-6">
             <button className="bg-[#6DAFCA] text-white px-6 py-2 rounded">Add To Cart</button>
-            <button className="border border-blue-500 text-blue-500 px-6 py-2 rounded">Buy Now</button>
+            <button onClick={handleBuyNow} className="border border-blue-500 text-blue-500 px-6 py-2 rounded">Buy Now</button>
           </div>
          <div className="flex gap-2">
          <div className="flex flex-col space-y-2 text-sm text-gray-600">
@@ -174,27 +186,27 @@ const ProductDetail: React.FC = () => {
           </div>
 
           <div className="flex flex-col space-y-2 text-sm text-gray-600">
-            <span>✓ Purity Guaranteed</span>
-            <span>✓ Free Shipping All Across India</span>
-            <span>✓ International Shipment Charges Add</span>
+            <span>✓ Any Questions ? Please contact us at</span>
+            <span>✓ +91  0123456789</span>
+            <span>✓ 100% Certified by International Standards</span>
           </div>
          </div>
         </div>
       </div>
 
       {/* Product Details */}
-      <div className="mt-12">
+      <div className="mt-12 bg-[#FFFAF4] p-4">
         <h2 className="text-2xl font-bold mb-4">Product Detail</h2>
         <p className="mb-6">{product.description}</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 className="font-semibold mb-2">Basic Information</h3>
             <table className="w-full">
-              <tbody>
-                <tr><td>Product Type</td><td>{product.basicInfo.productType}</td></tr>
-                <tr><td>Brand</td><td>{product.basicInfo.brand}</td></tr>
-                <tr><td>Item Package Quantity</td><td>{product.basicInfo.itemPackageQuantity}</td></tr>
-                <tr><td>Gender</td><td>{product.basicInfo.gender}</td></tr>
+              <tbody >
+                <tr className="border-b-2"><td >Product Type</td><td>{product.basicInfo.productType}</td></tr>
+                <tr className="border-b-2"><td>Brand</td><td>{product.basicInfo.brand}</td></tr>
+                <tr className="border-b-2"><td>Item Package Quantity</td><td>{product.basicInfo.itemPackageQuantity}</td></tr>
+                <tr className="border-b-2"><td>Gender</td><td>{product.basicInfo.gender}</td></tr>
               </tbody>
             </table>
           </div>
@@ -202,10 +214,10 @@ const ProductDetail: React.FC = () => {
             <h3 className="font-semibold mb-2">Diamond Information</h3>
             <table className="w-full">
               <tbody>
-                <tr><td>Diamond Color</td><td>{product.diamondInfo.color}</td></tr>
-                <tr><td>Diamond Clarity</td><td>{product.diamondInfo.clarity}</td></tr>
-                <tr><td>Diamond Carat (Ct)</td><td>{product.diamondInfo.caratWeight}</td></tr>
-                <tr><td>Diamond Pcs</td><td>{product.diamondInfo.pieces}</td></tr>
+                <tr className="border-b-2"><td>Diamond Color</td><td>{product.diamondInfo.color}</td></tr>
+                <tr className="border-b-2"><td>Diamond Clarity</td><td>{product.diamondInfo.clarity}</td></tr>
+                <tr className="border-b-2"><td>Diamond Carat (Ct)</td><td>{product.diamondInfo.caratWeight}</td></tr>
+                <tr className="border-b-2"><td>Diamond Pcs</td><td>{product.diamondInfo.pieces}</td></tr>
               </tbody>
             </table>
           </div>
@@ -213,9 +225,9 @@ const ProductDetail: React.FC = () => {
             <h3 className="font-semibold mb-2">Metal Information</h3>
             <table className="w-full">
               <tbody>
-                <tr><td>Metal Purity</td><td>{product.metalInfo.purity}</td></tr>
-                <tr><td>Metal</td><td>{product.metalInfo.metal}</td></tr>
-                <tr><td>Net Weight (G.)</td><td>{product.metalInfo.netWeight}</td></tr>
+                <tr className="border-b-2"><td>Metal Purity</td><td>{product.metalInfo.purity}</td></tr>
+                <tr className="border-b-2"><td>Metal</td><td>{product.metalInfo.metal}</td></tr>
+                <tr className="border-b-2"><td>Net Weight (G.)</td><td>{product.metalInfo.netWeight}</td></tr>
               </tbody>
             </table>
           </div>
@@ -223,8 +235,8 @@ const ProductDetail: React.FC = () => {
             <h3 className="font-semibold mb-2">Certification</h3>
             <table className="w-full">
               <tbody>
-                <tr><td>Diamond Certification</td><td>{product.certification.diamondCertification}</td></tr>
-                <tr><td>Hallmark License</td><td>{product.certification.hallmarkLicense}</td></tr>
+                <tr className="border-b-2"><td>Diamond Certification</td><td>{product.certification.diamondCertification}</td></tr>
+                <tr className="border-b-2"><td>Hallmark License</td><td>{product.certification.hallmarkLicense}</td></tr>
               </tbody>
             </table>
           </div>
@@ -232,7 +244,7 @@ const ProductDetail: React.FC = () => {
       </div>
 
       
-      <div className="mt-12">
+      <div className="mt-12 bg-[#FFFAF4] p-4">
         <h2 className="text-2xl font-bold mb-4">Price Breakup</h2>
         <table className="w-full border-collapse">
           <thead>
@@ -256,6 +268,9 @@ const ProductDetail: React.FC = () => {
                 <td className="border p-2">{item.finalValue}</td>
               </tr>
             ))}
+            
+          
+           
             <tr>
               <td colSpan={5} className="border p-2 font-bold">Grand Total</td>
               <td className="border p-2 font-bold">Rs {product.price.toFixed(2)}</td>
@@ -264,16 +279,17 @@ const ProductDetail: React.FC = () => {
         </table>
       </div>
 
-      {/* Tags */}
+      
       <div className="mt-12">
         <h2 className="text-2xl font-bold mb-4">Tags</h2>
         <div className="flex flex-wrap gap-2">
           {product.tags.map((tag, index) => (
-            <span key={index} className="bg-gray-200 px-3 py-1 rounded-full text-sm">{tag}</span>
+            <span key={index} className="bg-[#FFFAF4] px-3 py-1  text-sm">{tag}</span>
           ))}
         </div>
       </div>
 
+          <CustomerReviews />
     <ExploreProducts />
     <JewelleryCollections />
     </div>

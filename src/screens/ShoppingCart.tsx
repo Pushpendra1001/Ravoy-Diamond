@@ -1,4 +1,4 @@
-// src/components/ShoppingCart.tsx
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import images from '../assets/images';
@@ -86,7 +86,7 @@ const ShoppingCart: React.FC = () => {
 
         </div>
 
-        {/* Right Side - Order Summary */}
+        
         <div className="md:w-1/3">
         <h2 className="text-xl font-semibold mb-4">ORDER SUMMARY</h2>
           

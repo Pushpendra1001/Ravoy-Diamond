@@ -11,13 +11,13 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: 1, name: 'Ring Diamond', image: images.Ring2, price: 999.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 1, name: 'Ring Diamond', image: images.Ring1, price: 999.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 2, name: 'Mitchelle Earrings', image: images.Ring2, price: 799.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 3, name: 'Diamond Bracelet', image: images.Ring3, price: 1299.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 4, name: 'Earrings Twirls', image: images.Ring4, price: 599.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 5, name: 'Pendant Classic', image: images.Ring2, price: 899.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 6, name: 'Pendant Classic', image: images.Ring2, price: 899.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 7, name: 'Pendant Classic', image: images.Ring2, price: 899.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 5, name: 'Pendant Classic', image: images.Ring5, price: 899.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 6, name: 'Pendant Classic', image: images.Ring4, price: 899.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 7, name: 'Pendant Classic', image: images.Ring1, price: 899.99, description: 'Lorem ipsum dolor sit amet.', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
 ];
 
 const ExploreProducts: React.FC = () => {

@@ -2,12 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import HomePage from './screens/homepage';
-
 import Footer from './components/Footer';
 import Header from './components/Header';
 import GiftOffers from './screens/giftsOfferPage';
 import ProductDetail from './screens/productDetail';
-import images from './assets/images';
+
 import ShoppingCart from './screens/ShoppingCart';
 
 

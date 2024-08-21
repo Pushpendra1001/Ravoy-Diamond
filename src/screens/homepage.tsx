@@ -1,4 +1,4 @@
-// src/screens/HomePage.tsx
+
 import React from 'react';
 import HeroSection from '../components/HeroSection';
 import CategoryIcons from '../components/CategoryIcons';
