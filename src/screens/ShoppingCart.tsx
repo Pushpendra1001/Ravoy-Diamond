@@ -5,6 +5,7 @@ import images from '../assets/images';
 import ImageCollection from '../components/ImageCollection';
 import ExploreProducts from '../components/ExploreProjects';
 
+
 interface CartItem {
   id: number;
   name: string;
@@ -131,9 +132,7 @@ const ShoppingCart: React.FC = () => {
               <span>₹ 55329</span>
             </div>
             <div className="text-green-600 mb-4">YOU SAVE ₹ 2156</div>
-            <button className="w-full bg-blue-600 text-white py-2 rounded-md">
-              Proceed To Checkout
-            </button>
+            <Link to="/address" className="bg-yellow-400 text-black px-4 py-2 rounded-md block text-center">Proceed to Checkout</Link>
           </div>
         </div>
       </div>

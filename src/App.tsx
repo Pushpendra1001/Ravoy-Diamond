@@ -8,6 +8,7 @@ import GiftOffers from './screens/giftsOfferPage';
 import ProductDetail from './screens/productDetail';
 
 import ShoppingCart from './screens/ShoppingCart';
+import AddressPage from './screens/adressPage';
 
 
 const App: React.FC = () => {
@@ -22,6 +23,8 @@ const App: React.FC = () => {
         <Route path="/gifts-and-offers" element={<GiftOffers />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<ShoppingCart/>} />
+        <Route path="/address" element={<AddressPage/>} />
+
       </Routes>
     <Footer />
 
